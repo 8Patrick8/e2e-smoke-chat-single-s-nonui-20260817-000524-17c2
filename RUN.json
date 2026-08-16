@@ -16,7 +16,7 @@
           "."
         ]
       ],
-      "start": [
+      "test": [
         "${python}",
         "-m",
         "pytest"
