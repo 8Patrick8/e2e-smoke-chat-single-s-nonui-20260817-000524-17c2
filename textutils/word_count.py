@@ -1,5 +1,8 @@
+from textutils._validation import ensure_str
+
+
 def word_count(text: str) -> int:
-    if not isinstance(text, str):
-        raise TypeError("text must be a str")
+    """Zählt die durch Whitespace getrennten Wörter in ``text``."""
+    ensure_str(text)
 
     return len(text.split())
