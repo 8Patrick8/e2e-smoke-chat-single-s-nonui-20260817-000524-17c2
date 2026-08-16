@@ -1,2 +1,5 @@
 def reverse_words(text: str) -> str:
-    raise NotImplementedError
+    if not isinstance(text, str):
+        raise TypeError("text must be a str")
+
+    return " ".join(reversed(text.split()))
