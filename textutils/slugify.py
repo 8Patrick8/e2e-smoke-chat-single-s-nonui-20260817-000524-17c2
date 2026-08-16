@@ -1,5 +1,7 @@
 import unicodedata
 
+from textutils._validation import ensure_str
+
 _UMLAUT_TRANSLATIONS = {
     "ä": "ae",
     "ö": "oe",
@@ -12,8 +14,8 @@ _UMLAUT_TRANSLATIONS = {
 
 
 def slugify(text: str) -> str:
-    if not isinstance(text, str):
-        raise TypeError("text must be a str")
+    """Erzeugt einen URL-freundlichen Slug, der nur Zeichen aus ``[a-z0-9-]`` enthält."""
+    ensure_str(text)
 
     for umlaut, replacement in _UMLAUT_TRANSLATIONS.items():
         text = text.replace(umlaut, replacement)
